@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Note that some adapters may set a maximum length for the String type by default, please ensure your strings are long
+// enough when changing adapters.
+// See https://www.prisma.io/docs/orm/reference/prisma-schema-reference#string for more information
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Session {
+  id            String    @id
+  shop          String
+  state         String
+  isOnline      Boolean   @default(false)
+  scope         String?
+  expires       DateTime?
+  accessToken   String
+  userId        BigInt?
+  firstName     String?
+  lastName      String?
+  email         String?
+  accountOwner  Boolean   @default(false)
+  locale        String?
+  collaborator  Boolean?  @default(false)
+  emailVerified Boolean?  @default(false)
+  refreshToken        String?
+  refreshTokenExpires DateTime?
+}
+
+model GuperTransaction {
+  id               String    @id @default(cuid())
+  cartToken        String    @unique
+  shopifyOrderId   String?   @unique
+  confirmToken     String
+  amountToRedeem   Int       @default(0)
+  accumulatedOrder Int?
+  TID              String?
+  expiresAt        DateTime
+  status           String    @default("pending")
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@index([shopifyOrderId])
+  @@index([status])
+}
+
+model GuperConfig {
+  id            String   @id @default(cuid())
+  shop          String   @unique
+  baseUrl       String
+  apiKey        String
+  apiSecret     String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}

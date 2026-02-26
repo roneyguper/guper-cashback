@@ -1,0 +1,12 @@
+{
+  "title": "Cashback Guper",
+  "loading": "Calcul de votre cashback...",
+  "loginPrompt": "Connectez-vous pour voir votre solde de cashback.",
+  "errorPrompt": "Impossible de charger votre cashback.",
+  "accumulating": "Vous allez accumuler {{amount}} de cashback sur cette commande!",
+  "balance": "Solde disponible: {{amount}}",
+  "redeemQuestion": "Voulez-vous utiliser votre cashback?",
+  "noRedeem": "Ne pas utiliser",
+  "redeemButton": "Utiliser {{amount}}",
+  "redeemConfirm": "{{amount}} sera déduit!"
+}

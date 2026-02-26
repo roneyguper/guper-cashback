@@ -1,0 +1,7 @@
+query RunInput {
+  cart {
+    metafield(namespace: "$app", key: "guperRedeemAmount") {
+      value
+    }
+  }
+}

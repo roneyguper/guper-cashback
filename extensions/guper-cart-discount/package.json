@@ -1,0 +1,21 @@
+{
+  "name": "guper-cart-discount",
+  "private": true,
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "shopify app function build"
+  },
+  "dependencies": {
+    "@shopify/shopify_function": "^2.0.1"
+  },
+  "codegen": {
+    "schema": "schema.graphql",
+    "documents": ["src/**/*.graphql"],
+    "generates": {
+      "src/types.d.ts": {
+        "plugins": ["typescript", "typescript-operations"]
+      }
+    }
+  }
+}

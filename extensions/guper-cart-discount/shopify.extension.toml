@@ -1,0 +1,15 @@
+api_version = "2026-01"
+
+[[extensions]]
+name = "guper-cart-discount"
+handle = "guper-cart-discount"
+uid = "e9b2fe23-46b8-85e5-8478-49bcae2e07cbef6c3a4e"
+type = "function"
+
+[[extensions.targeting]]
+module = "./src/index.js"
+target = "purchase.order-discount.run"
+input_query = "src/input.graphql"
+
+[extensions.build]
+watch = ["src/**/*.{js,graphql}"]

@@ -1,0 +1,19 @@
+api_version = "2026-01"
+
+[[extensions]]
+name = "guper-checkout-ui"
+handle = "guper-checkout-ui"
+type = "ui_extension"
+uid = "716d9326-149a-7546-6d6f-55edf28f7df984700c7f"
+
+[[extensions.targeting]]
+module = "./src/Checkout.jsx"
+target = "purchase.checkout.block.render"
+
+[extensions.capabilities]
+api_access = true
+network_access = true
+
+[[extensions.metafields]]
+namespace = "$app"
+key = "guperRedeemAmount"
