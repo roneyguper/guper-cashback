@@ -1,6 +1,6 @@
 client_id = "3223ced5d84403c13d2759035ed8b156"
 name = "Guper Cashback"
-application_url = "https://YOUR-APP-URL.railway.app"
+application_url = "https://guper-cashback-production.up.railway.app"
 embedded = true
 
 [build]
@@ -38,6 +38,6 @@ use_legacy_install_flow = false
 redirect_urls = [ ]
 
 [app_proxy]
-url = "https://YOUR-APP-URL.railway.app"
+url = "https://guper-cashback-production.up.railway.app"
 subpath = "guper"
 prefix = "apps"
