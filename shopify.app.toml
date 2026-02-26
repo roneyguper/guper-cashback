@@ -1,3 +1,5 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
 client_id = "3223ced5d84403c13d2759035ed8b156"
 name = "Guper Cashback"
 application_url = "https://guper-cashback-production.up.railway.app"
@@ -18,18 +20,19 @@ api_version = "2026-01"
   uri = "/webhooks/app/uninstalled"
 
   [[webhooks.subscriptions]]
-  topics = [ "orders/paid" ]
-  uri = "/webhooks/orders/paid"
-
-  [[webhooks.subscriptions]]
   topics = [ "orders/cancelled" ]
   uri = "/webhooks/orders/cancelled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "orders/paid" ]
+  uri = "/webhooks/orders/paid"
 
   [[webhooks.subscriptions]]
   topics = [ "refunds/create" ]
   uri = "/webhooks/orders/partially_refunded"
 
 [access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "write_orders,read_orders,read_checkouts,write_discounts,read_discounts,write_products,read_products,write_metaobject_definitions,read_metaobject_definitions"
 optional_scopes = [ ]
 use_legacy_install_flow = false
